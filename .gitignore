@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .DS_Store
 node_modules/
 /dist/
@@ -16,7 +16,7 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
-=======
+
 # Compiled class file
 *.class
 
@@ -40,4 +40,4 @@ selenium-debug.log
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
->>>>>>> ef8d73c592417fff3c45d48b92223443aae22bee
+
