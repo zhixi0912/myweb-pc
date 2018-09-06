@@ -5,7 +5,9 @@
         First section ...
       </div>
       <div class="section">
-        Second section ...
+        <div class="song">
+          <p id="f" @click='fade'>hello</p>
+        </div>
       </div>
     </full-page>
   </div>
@@ -24,6 +26,11 @@
     methods: {
       afterLoad() {
         console.log("Emitted 'after load' event.");
+      },
+      fade:function(){
+        //$('#f').addClass('animated bounceOutLeft')
+        document.getElementById('f').setAttribute('class','animated')
+        document.getElementById('f').setAttribute('class','bounceOutLeft')
       }
     }
   }

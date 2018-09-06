@@ -16,7 +16,9 @@
   "dependencies": {
     "element-ui": "^2.4.6",
     "vue": "^2.5.2",
+    "vue-fullpage.js": "0.0.5",
     "vue-router": "^3.0.1",
+    "vue2-animate": "^2.1.0",
     "webpack-cli": "^3.1.0"
   },
   "devDependencies": {
