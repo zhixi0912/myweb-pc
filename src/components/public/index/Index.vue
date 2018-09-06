@@ -6,7 +6,7 @@
       </div>
       <div class="section">
         <div class="song">
-          <p id="f" @click='fade'>hello</p>
+          <p id="f" @click='fade'>hello<i class="fa fa-bath" aria-hidden="true"></i></p>
         </div>
       </div>
     </full-page>
