@@ -2,6 +2,7 @@
   <div>
     <full-page ref="fullpage" :options="options">
       <div class="section">
+        <router-view/>
         First section ...
       </div>
       <div class="section">
