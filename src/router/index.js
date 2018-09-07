@@ -26,16 +26,21 @@ export default new Router({
       component: Index,
       children:[
         {
-          path: '../components/Content',
+          path: '/Content',
           name: 'Content',
           component: Content,
         },
         {
-          path: '../components/ContentList/:id',
+          path: '/ContentList/:id',
           name: 'ContentList',
           component: ContentList,
         }
       ]
-    }
+    },
+    // {
+    //   path:'/Content',
+    //   name:'Content',
+    //   component:Content
+    // }
   ]
 })
