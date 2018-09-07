@@ -31,7 +31,7 @@ export default new Router({
           component: Content,
         },
         {
-          path: '/:id',
+          path: '/ContentList/:id',
           name: 'ContentList',
           component: ContentList,
         }

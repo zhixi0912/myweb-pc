@@ -20,7 +20,8 @@
   export default {
     name: "Index" ,
     components: {
-      myHeader, myFooter,
+      myHeader,
+      myFooter,
       navMenu
     }
   }

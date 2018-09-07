@@ -28,7 +28,7 @@
     methods: {
       getData () {
         this.$api.get('topic/' + this.id, null, res => {
-          console.log("1111");
+          console.log(res);
           this.contentList = res.data
         })
       }
