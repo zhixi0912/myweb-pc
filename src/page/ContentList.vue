@@ -1,12 +1,19 @@
+
+
 <template>
   <div>
+    <div>这是详情页</div>
     <h2 v-text="contentList.title"></h2>
-    <p>作者：{{contentList.author.loginname}}　　发表于：{{$utils.goodTime(contentList.create_at)}}</p><hr>
+    <p>作者：
+      {{contentList.author.loginname}}　
+      　发表于：{{$utils.goodTime(contentList.create_at)}}</p><hr>
     <article v-html="contentList.content"></article>
     <h3>网友回复：</h3>
     <ul>
       <li v-for="item in contentList.replies">
-        <p>评论者：{{item.author.loginname}}　　评论于：{{$utils.goodTime(item.create_at)}}</p>
+        <p>
+          评论者：{{item.author.loginname}}　　
+          评论于：{{$utils.goodTime(item.create_at)}}</p>
         <article v-html="item.content"></article>
       </li>
     </ul>
@@ -28,8 +35,9 @@
     methods: {
       getData () {
         this.$api.get('topic/' + this.id, null, res => {
-          console.log("1111");
+          console.log(res);
           this.contentList = res.data
+
         })
       }
     }
@@ -39,3 +47,4 @@
 <style scoped>
 
 </style>
+

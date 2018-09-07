@@ -29,6 +29,7 @@
         let that = this
         this.$api.get('topics', null, res => {
           that.list = res.data
+          console.log(res);
         })
       }
     }
