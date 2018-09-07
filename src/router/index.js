@@ -26,12 +26,12 @@ export default new Router({
       component: Index,
       children:[
         {
-          path: '/Content',
+          path: '../components/Content',
           name: 'Content',
           component: Content,
         },
         {
-          path: '/ContentList/:id',
+          path: '../components/ContentList/:id',
           name: 'ContentList',
           component: ContentList,
         }
