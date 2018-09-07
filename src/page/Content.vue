@@ -1,17 +1,38 @@
 <template>
   <div>
-    This is my Content
+    <h1>this.is content</h1>
+    <ul>
+      <li v-for="item in list">
+        <!--<time v-text="item.create_at"></time>-->
+        <time v-text="$utils.goodTime(item.create_at)"></time>
+        <router-link :to="'/ContentList/' + item.id">
+          {{ item.title }}
+        </router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-    export default {
-      created () {
-        this.$api.get('topics', null, r => {
-          console.log(r)
+  export default {
+    name: "Content",
+    data(){
+      return {
+        list: []
+      }
+    },
+    created () {
+      this.getData()
+    },
+    methods: {
+      getData () {
+        let that = this
+        this.$api.get('topics', null, res => {
+          that.list = res.data
         })
       }
     }
+  }
 </script>
 
 <style scoped>

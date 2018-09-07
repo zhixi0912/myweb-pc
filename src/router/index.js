@@ -22,25 +22,21 @@ export default new Router({
     // }
     {
       path: '/',
-      name: 'Index',
+      name: '',
       component: Index,
       children:[
         {
-          path: '/Content',
+          path: '/',
           name: 'Content',
           component: Content,
         },
         {
-          path: '/ContentList/:id',
+          path: '/:id',
           name: 'ContentList',
           component: ContentList,
         }
       ]
     },
-    // {
-    //   path:'/Content',
-    //   name:'Content',
-    //   component:Content
-    // }
+
   ]
 })

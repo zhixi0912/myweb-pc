@@ -5,7 +5,7 @@
       <el-container id="el-container">
         <el-header><myHeader></myHeader></el-header>
         <el-main>
-          <router-view/>
+          <router-view></router-view>
         </el-main>
         <el-footer><myFooter></myFooter></el-footer>
       </el-container>
