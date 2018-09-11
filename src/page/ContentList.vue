@@ -35,7 +35,11 @@
     methods: {
       getData () {
         this.$api.get('topic/' + this.id, null, res => {
+<<<<<<< HEAD
 
+=======
+          console.log(res);
+>>>>>>> company
           this.contentList = res.data
           console.log(this.contentList.author);
           console.log(this.contentList.replies);
