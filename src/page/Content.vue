@@ -9,16 +9,46 @@
         <!--</router-link>-->
       <!--</li>-->
     <!--</ul>-->
-    <full-page ref="fullpage" :options="options">
+    <full-page ref="fullpage" :options="options"  id="fullpage">
       <div class="section section-1">
         <el-header class="animated faedOutUp"><myHeader></myHeader></el-header>
-        First section ...
+        <div class="main web-w clearfix">
+            <h3 id="page1-tiele-h1" class="text-center" >标题1</h3>
+          <el-row :gutter="20">
+            <el-col :span="12">
+              <div class="grid-content bg-purple bg-purple-left" id="page1-left" >left</div>
+            </el-col>
+            <el-col :span="12">
+              <div class="grid-content bg-purple bg-purple-right" id="page1-right" >right</div>
+            </el-col>
+          </el-row>
+        </div>
       </div>
       <div class="section section-2">
-        Second section ...
+        <div class="main web-w clearfix">
+          <h3 id="page2-tiele-h1" class="text-center">标题2</h3>
+          <el-row :gutter="20">
+            <el-col :span="12">
+              <div class="grid-content bg-purple bg-purple-left" id="page2-left" @click='fade'>left</div>
+            </el-col>
+            <el-col :span="12">
+              <div class="grid-content bg-purple bg-purple-right" id="page2-right" :class="{bgBlue:pages,bgBlue:pages}">right</div>
+            </el-col>
+          </el-row>
+        </div>
       </div>
       <div class="section section-3">
-        Second3 section ...
+        <div class="main web-w clearfix">
+          <h3 id="page3-tiele-h1" class="text-center">标题3</h3>
+          <el-row :gutter="20">
+            <el-col :span="12">
+              <div class="grid-content bg-purple bg-purple-left" id="page3-left">left</div>
+            </el-col>
+            <el-col :span="12">
+              <div class="grid-content bg-purple bg-purple-right" id="page3-right">right</div>
+            </el-col>
+          </el-row>
+        </div>
       </div>
     </full-page>
   </div>
@@ -31,21 +61,37 @@
       return {
         options: {
           afterLoad: this.afterLoad,
-          anchors: ['page1', 'page2', 'page3'],
         },
-
+        pages: false,
       }
     },
-
     methods: {
-      afterLoad() {
-        let that = this
-        console.log("Emitted 'after load' event.");
-        console.log(that);
-        // if(that.setAttribute("data-anchor") == page2){
-        //     alert("1");
-        // }
+      afterLoad(anchorLink,index ) {
+        var pageA = index.index+1;
+          if(pageA==1){
+            console.log("aa")
+
+            // document.getElementById('page1-tiele-h1').setAttribute('class','flip')
+            // document.getElementById('page1-tiele-h1').setAttribute('class','animated')
+          }else if(pageA==2){
+            console.log(pageA);
+            this.pages = true
+            // document.getElementById('page2-tiele-h1').setAttribute('class','flip')
+            // document.getElementById('page2-tiele-h1').setAttribute('class','animated')
+        }
       }
+      ,
+      fade:function(){
+        document.getElementById('page2-left').setAttribute('class','flip')
+        // document.getElementById('page2-left').setAttribute('class','animated')
+      }
+      ,addSection: function(e) {
+        e.preventDefault();
+        var newSectionNumber = document.querySelectorAll('.fp-section').length + 1;
+        console.log(newSectionNumber);
+      },
+
+
     },
     components:{
       myHeader
@@ -79,6 +125,29 @@
 <style scoped>
 .el-header{
   border-bottom: solid 1px #e6e6e6;
+}
+.bgBlue{
+  background-color: #ff0000!important;
+}
+.text-center{
+  text-align: center;
+  background-color: #409EFF;
+}
+.bg-purple-left{
+  background-color: #67C23A;
+}
+.bg-purple-right{
+  text-align: right;
+  background-color: #F56C6C;
+}
+.page1{
+  background-color: #41b883;
+}
+.page2{
+  background-color: #ff5f45;
+}
+.page3{
+  background-color: #0798ec;
 }
 .section{
   /*color: #ffffff;*/
