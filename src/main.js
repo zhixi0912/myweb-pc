@@ -11,6 +11,8 @@ import router from './router'
 // 引用API文件
 import api from './api/index.js'
 import utils from './utils/index.js'
+// import Header from './components/webHeader.vue'; //注册头部为全局组件时没有成功，待下次处理
+
 
 Vue.use(ElementUI)
 Vue.use(VueFullPage)
@@ -19,6 +21,10 @@ Vue.config.devtools = true
 // 将API方法绑定到全局
 Vue.prototype.$api = api
 Vue.prototype.$utils = utils
+// Vue.component('webHeaderVue',Header);
+
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

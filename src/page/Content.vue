@@ -93,7 +93,7 @@
       ,addSection: function(e) {
         e.preventDefault();
         var newSectionNumber = document.querySelectorAll('.fp-section').length + 1;
-        console.log(newSectionNumber);
+        // console.log(newSectionNumber);
       },
 
 
@@ -128,12 +128,6 @@
 </script>
 
 <style scoped>
-.el-header{
-  border-bottom: solid 1px #e6e6e6;
-}
-.bgBlue{
-  background-color: #ff0000!important;
-}
 .text-center{
   text-align: center;
   background-color: #409EFF;
