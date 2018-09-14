@@ -5,9 +5,10 @@
     <!--<router-view class="animated faedOutUp" name="Header"></router-view>-->
 
     <el-main>
-      <!--<router-view name="HomeCarousel"></router-view>-->
+
       <router-view></router-view>
-      <!--<router-view name="HomeNewsList"></router-view>-->
+      <!--<router-view name="HomeCarousel"></router-view>-->
+      <router-view name="HomeNewsList"></router-view>
     </el-main>
     <el-footer><myFooter></myFooter></el-footer>
   </div>

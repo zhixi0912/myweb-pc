@@ -7,7 +7,7 @@ import Content from '@/page/Content'
 // import ContentList from '@/page/ContentList'
 import Home from '@/page/home/Home'
 import HomeCarousel from '@/page/home/HomeCarousel'
-// import HomeNewsList from '@/page/home/HomeNewsList'
+import HomeNewsList from '@/page/home/HomeNewsList'
 
 
 
