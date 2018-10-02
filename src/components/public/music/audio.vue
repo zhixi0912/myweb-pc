@@ -7,7 +7,7 @@
           </div>
         <el-row>
           <el-col :span="6">
-            <div class="grid-content">
+            <div class="grid-content audio-operation">
               <el-row>
                 <el-col :span="8">
                   <div class="grid-content">
@@ -42,7 +42,7 @@
                   <div class="grid-content">
                     <el-switch
                       v-model="value3"
-                      active-text="按月付费"
+                      active-text="高品质"
                       >
                     </el-switch>
                   </div>
@@ -84,7 +84,7 @@
 
 <style scoped>
 .audio-box{
-  /*min-height: 200px;*/
+  padding: 20px 0;
   background-image: -webkit-linear-gradient(left, rgb(226, 225, 228), rgb(186, 204, 217) 50%, rgb(205, 209, 211));
   background-image: linear-gradient(to right, rgb(226, 225, 228), rgb(186, 204, 217) 50%, rgb(205, 209, 211));
   background-repeat: no-repeat;
@@ -98,5 +98,16 @@
 }
 .grid-content-volume .block{
   flex: 1;
+}
+.audio-operation .grid-content{
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 30px;
 }
 </style>

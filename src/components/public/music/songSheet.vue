@@ -25,7 +25,6 @@
 
             this.songSheetTitle = res.result.name;
             this.songSheet = res.result.tracks;
-            // console.log("111111",res.result.name);
             // console.log("111111",res.result.tracks);
           })
         },

@@ -1,8 +1,8 @@
 <template>
   <div class="block">
     <el-carousel height="150px">
-      <el-carousel-item v-for="item in 4" :key="item">
-        <h3>{{ item }}</h3>
+      <el-carousel-item v-for="(item,index) in tracks" v-if="index<=6" :key="index">
+        <image class="carousel-img" :src="item.album.blurPicUrl"></image>
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -10,7 +10,18 @@
 
 <script>
     export default {
-        name: "HomeCarousel",
+      name: "HomeCarousel",
+      data(){
+        return{
+          tracks:[]
+        }
+      },
+      created () {
+        this.$axios.get('/api/playlist/detail', {id: 37880978,updateTime: -1}, res => {
+          this.tracks = res.result.tracks;
+          console.log("111111",this.tracks);
+        })
+      },
     }
 </script>
 
@@ -22,7 +33,10 @@
     line-height: 150px;
     margin: 0;
   }
-
+  .carousel-img{
+    width: 100%;
+    height: auto;
+  }
   .el-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
