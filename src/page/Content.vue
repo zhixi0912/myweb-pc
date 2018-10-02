@@ -1,17 +1,14 @@
 <template>
-  <div>
-    <!--<ul style="display: none">-->
-      <!--<li v-for="item in list">-->
-        <!--<time v-text="item.create_at"></time>-->
-        <!--<time v-text="$utils.goodTime(item.create_at)"></time>-->
-        <!--<router-link :to="'/ContentList/' + item.id">-->
-          <!--{{ item.title }}-->
-        <!--</router-link>-->
-      <!--</li>-->
-    <!--</ul>-->
+  <div class="fullpage-main">
+    <ul id="menu" class="menu">
+      <li data-anchor="page1" class="active"><a href="#page1">Section 1</a></li>
+      <li data-anchor="page2"><a href="#page2">Section 2</a></li>
+      <li data-anchor="page3"><a href="#page3">Section 3</a></li>
+    </ul>
+
     <full-page ref="fullpage" :options="options"  id="fullpage">
       <div class="section section-1">
-        <el-header class="animated faedOutUp"><myHeader></myHeader></el-header>
+        <el-header class="animated faedOutUp"><Header></Header></el-header>
         <div class="main web-w clearfix">
             <h3 id="page1-tiele-h1" class="text-center" :class="{animated:page1Title,fadeInUpBig:page1Title}">标题1</h3>
           <el-row :gutter="20">
@@ -48,19 +45,25 @@
               <div class="grid-content bg-purple bg-purple-right" id="page3-right"  :class="{animated:page3r,rotateInDownRight :page3r}">right</div>
             </el-col>
           </el-row>
+          <Footer></Footer>
         </div>
       </div>
+
     </full-page>
   </div>
 </template>
 
 <script>
-  import myHeader from '../components/webHeader'
   export default {
     data() {
       return {
         options: {
           afterLoad: this.afterLoad,
+          scrollBar: false,
+          menu: '#menu',
+          navigation: true,
+          anchors: ['page1', 'page2', 'page3'],
+          sectionsColor: ['#41b883', '#ff5f45', '#0798ec']
         },
         page1Title: false,
         page2Title: false,
@@ -89,45 +92,23 @@
             this.page3l = true
             this.page3r = true
           }
-      }
-      ,addSection: function(e) {
-        e.preventDefault();
-        var newSectionNumber = document.querySelectorAll('.fp-section').length + 1;
-        // console.log(newSectionNumber);
       },
 
 
     },
     components:{
-      myHeader
+      // moveTo(section, slide)	滚动到
     }
   }
 
 
 
-  // export default {
-  //   name: "Content",
-  //   data(){
-  //     return {
-  //       list: []
-  //     }
-  //   },
-  //   created () {
-  //     this.getData()
-  //   },
-  //   methods: {
-  //     getData () {
-  //       let that = this
-  //       this.$api.get('topics', null, res => {
-  //         that.list = res.data
-  //         console.log(res);
-  //       })
-  //     }
-  //   }
-  // }
 </script>
 
 <style scoped>
+.page1-tiele-h1{
+  margin: 0;
+}
 .text-center{
   text-align: center;
   background-color: #409EFF;
@@ -139,28 +120,38 @@
   text-align: right;
   background-color: #F56C6C;
 }
-.page1{
-  background-color: #41b883;
-}
-.page2{
-  background-color: #ff5f45;
-}
-.page3{
-  background-color: #0798ec;
-}
+
 .section{
   /*color: #ffffff;*/
+  /*position: relative;*/
 }
+
 .section-1{
-  /*background-image: url("../../static/images/index/400130960.jpg");*/
+  background-image: url("../../static/images/index/FE9AF2D7.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .section-2{
-  /*background-image: url("../../static/images/index/D8F807DF.jpg");*/
+  background-image: url("../../static/images/index/400130960.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.section-3{
+  background-image: url("../../static/images/index/D8F807DF.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.menu{
+  position: absolute;
+  right: 60px;
+  top: 30%;
+  background-color: #ffffff;
+  width: 100px;
+  min-height: 200px;
+  z-index: 9999;
+}
+
 </style>

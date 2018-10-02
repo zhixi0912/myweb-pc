@@ -1,53 +1,44 @@
 <template>
   <div>
-    <el-header class="animated faedOutUp"><myHeader></myHeader></el-header>
-    <!--<webHeaderVue-vue></webHeaderVue-vue>-->
-    <!--<router-view class="animated faedOutUp" name="Header"></router-view>-->
+    <el-header class="animated faedOutUp"><Header></Header></el-header>
 
     <el-main>
-
-      <router-view></router-view>
       <div class="main">
-        <div class="list-line-top">
+        <div class="carousel-box">
+          <Carousel></Carousel>
         </div>
-        <!--<div class="list-line" v-for="item in topics">-->
-            <!--<div v-html="item.content"></div>-->
-        <!--</div>-->
+
+        <div class="list-line-top">
+          <div class="link-url">
+            <router-link :to="{name:'Audio'}">这是一首歌</router-link>
+          </div>
+
+          <songSheet></songSheet>
+        </div>
+        <div class="audio-box">
+          <!--<AudioBox></AudioBox>-->
+        </div>
       </div>
-      <!--<router-view name="HomeCarousel"></router-view>-->
-      <router-view name="HomeNewsList"></router-view>
     </el-main>
-    <el-footer><myFooter></myFooter></el-footer>
+    <el-footer><Footer></Footer></el-footer>
   </div>
 </template>
 
 <script>
-    import myHeader from '../../components/webHeader'
-    import myFooter from '../../components/webFooter'
+  import Carousel from './HomeCarousel'  //引用幻灯片组件
+  import songSheet from '../../components/public/music/songSheet' //引用歌单组件
     export default {
      name: "home",
       data() {
-        // topics:[],
         return {
           activeIndex: '1',
           topics:[],
+          logo:require("../../../static/images/index/logo-mj.png"),
         };
       },
-      created () {
-       var topics;
-        this.$axios.get('playlist/detail', {id: 37880978,updateTime: -1}, r => {
-        //     this.$axios.get('topics', null, r => {
-        // this.$axios.get('/5baf32fda508d460ae6c42b7/example/searchList', null, r => {
-        // this.$axios.get('playlist/detail',{id: 37880978,updateTime: -1}, r => {
-          console.log(r)
-        //       this.topics = r.data;
-        //       topics.push(res.data);
-              // console.log(topics[0].content)
-        })
-      },
       components:{
-        myHeader,
-        myFooter
+        Carousel,
+        songSheet
       }
     }
 </script>
@@ -55,15 +46,20 @@
 <style scoped>
 .main{
   width: 1000px;
-  margin: 20px auto;
+  margin: 0px auto;
   overflow: hidden;
   min-height: 300px;
 }
 .list-line-top{
-  margin: 20px auto;
-  border: 1px solid #2d2f33;
-  min-height: 300px;
-  background-color: rgb(131, 203, 172);
+  margin: 20px 0;
+}
+.link-url{
+  float: left;
+}
+.list-line-top:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 .list-line{
   margin: 20px auto;

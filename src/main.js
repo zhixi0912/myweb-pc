@@ -11,8 +11,9 @@ import router from './router'
 // 引用API文件
 import axios from './api/index.js'
 import utils from './utils/index.js'
-// import Header from './components/webHeader.vue'; //注册头部为全局组件时没有成功，待下次处理
-
+import Header from './components/webHeader.vue'; //注册头部为全局组件
+import Footer from './components/webFooter.vue'; //注册脚部为全局组件
+// import AudioBox from './components/public/music/audio.vue'; //注册音乐播放器为全局组件
 
 Vue.use(ElementUI)
 Vue.use(VueFullPage)
@@ -21,9 +22,9 @@ Vue.config.devtools = true
 // 将API方法绑定到全局
 Vue.prototype.$axios = axios
 Vue.prototype.$utils = utils
-// Vue.component('webHeaderVue',Header);
-
-
+Vue.component('Header',Header);
+Vue.component('Footer',Footer);
+// Vue.component('AudioBox',AudioBox);
 
 /* eslint-disable no-new */
 new Vue({

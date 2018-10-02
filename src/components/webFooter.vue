@@ -1,13 +1,21 @@
 <template>
-  <div class="webFooter" id="webFooter">
-    <el-row>
-      <el-button disabled>关于我们</el-button>
-      <el-button type="primary" disabled>服务协议</el-button>
-      <el-button type="success" disabled>客服中心</el-button>
-      <el-button type="info" disabled>联系我们</el-button>
-      <el-button type="warning" disabled>诚聘英才</el-button>
-      <el-button type="danger" disabled>更多消息</el-button>
-    </el-row>
+  <div class="footer">
+    <div class="webFooter" id="webFooter">
+      <div class="foot-nav">
+        <div class="l-logo"></div>
+        <div class="r-nav">
+          <a class="el-button el-button--text" href="">关于我们</a>|
+          <a class="el-button el-button--text" href="">服务协议</a>|
+          <a class="el-button el-button--text" href="">客服中心</a>|
+          <a class="el-button el-button--text" href="">诚聘英才</a>|
+          <a class="el-button el-button--text" href="">版权所有</a>
+
+        </div>
+      </div>
+      <el-row>
+
+      </el-row>
+    </div>
   </div>
 </template>
 
@@ -18,5 +26,25 @@
 </script>
 
 <style scoped>
+.footer{
+  margin: 0 -20px;
+}
+.webFooter{
+  width: 1200px;
+  margin: 0 auto;
+}
+.foot-nav{
 
+}
+.l-logo{
+  display: inline-block;
+}
+.r-nav{
+  display: inline-block;
+}
+.el-button--text{
+  margin-right: 10px;
+  color: #666;
+  text-decoration: none;
+}
 </style>

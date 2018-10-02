@@ -1,7 +1,7 @@
 // 配置API接口地址
 // var root = 'https://cnodejs.org/api/v1'
 // var root = '/api/v1'
-var root = '/api'
+var root = '/prefix'
 // var root = '/mock'
 // console.log(root);
 // 引用axios
@@ -49,23 +49,28 @@ function apiAxios (method, url, params, success, failure) {
     withCredentials: false
   })
     .then(function (res) {
-      if (res.data.success === true) {
-        if (success) {
-          success(res.data)
-        }
-      } else {
-        if (failure) {
-          failure(res.data)
-        } else {
-          window.alert('error: ' + JSON.stringify(res.data))
-        }
-      }
+      // if (res.data.success === true) {
+      //   if (success) {
+      //     success(res.data)
+      //   }
+      // } else {
+      //   if (failure) {
+      //     failure(res.data)
+      //   } else {
+      //     // window.alert('error: ' + JSON.stringify(res.data))
+      //     console.log('error: 222' + JSON.stringify(res.data));
+      //   }
+      // }
+      success(res.data);
+      // success(JSON.stringify(res.data));
     })
     .catch(function (err) {
-      let res = err.response
-      if (err) {
-        window.alert('api error, HTTP CODE: ' + res.status)
-      }
+      // let res = err.response
+      // if (err) {
+      //   // window.alert('api error, HTTP CODE: ' + res.status)
+      //   console.log('api error333, HTTP CODE: ' + res.status);
+      // }
+      success('api error, HTTP CODE: ' +err.status);
     })
 }
 
