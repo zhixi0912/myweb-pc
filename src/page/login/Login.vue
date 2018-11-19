@@ -11,8 +11,8 @@
           <el-card class="box-card" >
             <template>
               <el-tabs v-model="activeName" @tab-click="handleClick">
-                <el-tab-pane label="默认登录" name="first"><AccountsLogin></AccountsLogin></el-tab-pane>
-                <el-tab-pane label="其他登录" name="second"><MobileLogin></MobileLogin></el-tab-pane>
+                <el-tab-pane label="普通登录" name="first"><AccountsLogin></AccountsLogin></el-tab-pane>
+                <el-tab-pane label="手机登录" name="second"><MobileLogin></MobileLogin></el-tab-pane>
               </el-tabs>
             </template>
             <el-row>

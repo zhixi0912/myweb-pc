@@ -5,7 +5,7 @@
     <el-main>
       <div class="web-w">
         <div class="carousel-box">
-          <Carousel></Carousel>
+          <Carousel :carousel-list="carouselList"></Carousel>
         </div>
 
         <div class="list-line-top">
@@ -32,7 +32,11 @@
       data() {
         return {
           activeIndex: '1',
-          topics:[],
+          carouselList:[
+            {imgUrl:'./../../static/images/login/login-ban-1.jpg'},
+            {imgUrl:'./../../static/images/login/login-ban-2.jpg'},
+            {imgUrl:'./../../static/images/login/login-ban-3.jpg'},
+          ],
           logo:require("../../../static/images/index/logo-mj.png"),
         };
       },
