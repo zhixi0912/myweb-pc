@@ -3,6 +3,12 @@ import Router from 'vue-router'
 import Index from '@/page/Index'
 import Content from '@/page/Content'
 import Home from '@/page/home/Home'
+import Login from '@/page/login/Login'
+import AccountsLogin from '@/page/login/AccountsLogin'
+import MobileLogin from '@/page/login/MobileLogin'
+import Register from '@/page/register/Register'
+import AccountsRegister from '@/page/register/AccountsRegister'
+import MobileRegister from '@/page/register/MobileRegister'
 import Audio from '@/components/public/music/audio'
 
 
@@ -46,6 +52,40 @@ export default new Router({
         //   },
         // },
       // ]
+    },
+    {
+      path:'/page/login/Login',
+      name:'Login',
+      component:Login,
+      children:[
+        {
+          path: '/AccountsLogin',
+          name: 'AccountsLogin',
+          component: AccountsLogin,
+        },
+        {
+          path: '/MobileLogin',
+          name: 'MobileLogin',
+          component: MobileLogin,
+        },
+      ]
+    },
+    {
+      path:'/page/register/Register',
+      name:'Register',
+      component:Register,
+      children:[
+        {
+          path: '/AccountsRegister',
+          name: 'AccountsRegister',
+          component: AccountsRegister,
+        },
+        {
+          path: '/MobileRegister',
+          name: 'MobileRegister',
+          component: MobileRegister,
+        },
+      ]
     },
     {
       path:'/components/public/music/audio',

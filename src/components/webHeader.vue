@@ -18,10 +18,10 @@
       </el-menu>
       <div class="r-nav">
         <button type="button" class="el-button el-button--text">
-          <span>登录</span>
+          <span><router-link to="/page/login/Login">登录</router-link></span>
         </button>
         <button type="button" class="el-button el-button--text">
-          <span>注册</span>
+          <span><router-link to="/page/register/Register">注册</router-link></span>
         </button>
       </div>
     </div>

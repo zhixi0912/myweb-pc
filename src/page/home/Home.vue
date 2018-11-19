@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <el-container>
     <el-header class="animated faedOutUp"><Header></Header></el-header>
 
     <el-main>
-      <div class="main">
+      <div class="web-w">
         <div class="carousel-box">
           <Carousel></Carousel>
         </div>
@@ -21,7 +21,7 @@
       </div>
     </el-main>
     <el-footer><Footer></Footer></el-footer>
-  </div>
+    </el-container>
 </template>
 
 <script>
@@ -44,12 +44,7 @@
 </script>
 
 <style scoped>
-.main{
-  width: 1000px;
-  margin: 0px auto;
-  overflow: hidden;
-  min-height: 300px;
-}
+
 .list-line-top{
   margin: 20px 0;
 }

@@ -1,8 +1,10 @@
 <template>
   <div class="block">
-    <el-carousel height="150px">
-      <el-carousel-item v-for="(item,index) in tracks" v-if="index<=6" :key="index">
-        <image class="carousel-img" :src="item.album.blurPicUrl"></image>
+    <el-carousel height="500px">
+      <el-carousel-item v-for="(item,index) in carouselList"  :key="index">
+        <!--<image class="carousel-img" :src="item.imgUrl"></image>-->
+        <img :src="item.imgUrl"/>
+        {{item.imgUrl}}
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -13,14 +15,12 @@
       name: "HomeCarousel",
       data(){
         return{
-          tracks:[]
+          // carouselList:this.carouselList
         }
       },
+      props:['carouselList'],
       created () {
-        this.$axios.get('/api/playlist/detail', {id: 37880978,updateTime: -1}, res => {
-          this.tracks = res.result.tracks;
-          console.log("111111",this.tracks);
-        })
+        console.log('this.carouselList',this.carouselList)
       },
     }
 </script>
@@ -30,7 +30,7 @@
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
-    line-height: 150px;
+    line-height: 500px;
     margin: 0;
   }
   .carousel-img{

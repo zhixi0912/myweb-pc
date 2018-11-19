@@ -13,4 +13,5 @@ export default {
 
 <style>
  @import "./style/style.scss";
+ @import "./style/base/_base.scss";
 </style>
