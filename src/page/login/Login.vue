@@ -6,8 +6,9 @@
         <div class="img-box">
           <Carousel :carousel-list="carouselList"></Carousel>
         </div>
+        <div class="login-box-bg"></div>
         <div class="login-box">
-          <el-card class="box-card" v-if="false">
+          <el-card class="box-card" >
             <template>
               <el-tabs v-model="activeName" @tab-click="handleClick">
                 <el-tab-pane label="默认登录" name="first"><AccountsLogin></AccountsLogin></el-tab-pane>
@@ -50,9 +51,9 @@
       return {
         activeName: 'first',
         carouselList:[
-          {imgUrl:'./../../static/images/login/login-ban-1.jpg'},
-          {imgUrl:'./../../static/images/login/login-ban-2.jpg'},
-          {imgUrl:'./../../static/images/login/login-ban-3.jpg'},
+          {imgUrl:'./../../static/images/login/login-ban-01.jpg'},
+          {imgUrl:'./../../static/images/login/login-ban-02.jpg'},
+          {imgUrl:'./../../static/images/login/login-ban-03.jpg'},
         ],
         form: {
           name: '',
@@ -90,17 +91,28 @@
 
 <style lang="scss" scoped>
   .el-main{
-    background-color: #fafafa;
+    background:#e8e8e8;
     .web-w{
       position: relative;
       .login-box{
         position: absolute;
-        right: 15px;
-        top: 15px;
+        right: 78px;
+        top: 58px;
         z-index: 999;
         .demo-ruleForm{
           width: 300px;
         }
+      }
+      .login-box-bg{
+        content: " ";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        right: 0;
+        top: 0;
+        right: 0;
+        z-index: 998;
+        background: url("./../../../static/images/login/login-box-bg-2.png") no-repeat center center;
       }
     }
   }
