@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/page/Index'
 import Content from '@/page/Content'
 import Home from '@/page/home/Home'
+import HomeNewsList from '@/page/home/HomeNewsList'
 import Login from '@/page/login/Login'
 import AccountsLogin from '@/page/login/AccountsLogin'
 import MobileLogin from '@/page/login/MobileLogin'
@@ -38,20 +39,20 @@ export default new Router({
       //   default:Home,
         // Header: Header,
       // },
-      // children:[
+      children:[
         // {
         //   path: '/',
         //   name: 'HomeCarousel',
         //   component: HomeCarousel,
         // },
-        // {
-        //   path: '/HomeNewsList/',
-        //   name: 'HomeNewsList',
-        //   component: {
-        //     HomeNewsList:HomeNewsList
-        //   },
-        // },
-      // ]
+        {
+          path: '/HomeNewsList/',
+          name: 'HomeNewsList',
+          component: {
+            HomeNewsList:HomeNewsList
+          },
+        },
+      ]
     },
     {
       path:'/page/login/Login',

@@ -10,7 +10,7 @@
         <div class="login-box">
           <el-card class="box-card" >
             <template>
-              <el-tabs v-model="activeName" @tab-click="handleClick">
+              <el-tabs v-model="activeName" @tab-click="handleClick" :stretch="true">
                 <el-tab-pane label="普通登录" name="first"><AccountsLogin></AccountsLogin></el-tab-pane>
                 <el-tab-pane label="手机登录" name="second"><MobileLogin></MobileLogin></el-tab-pane>
               </el-tabs>
