@@ -10,6 +10,7 @@ import MobileLogin from '@/page/login/MobileLogin'
 import Register from '@/page/register/Register'
 import AccountsRegister from '@/page/register/AccountsRegister'
 import MobileRegister from '@/page/register/MobileRegister'
+import wholeList from '@/page/wholeList/wholeList'
 import Audio from '@/components/public/music/audio'
 
 
@@ -87,6 +88,11 @@ export default new Router({
           component: MobileRegister,
         },
       ]
+    },
+    {
+      path:'/page/wholeList/wholeList',
+      name:'wholeList',
+      component:wholeList,
     },
     {
       path:'/components/public/music/audio',

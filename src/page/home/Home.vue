@@ -67,10 +67,10 @@
   border: 1px solid #2d2f33;
   background-color: rgb(230, 210, 213);
 }
-.el-tabs__nav{
+.link-url .el-tabs__nav{
   float: none;
 }
-.el-tabs--top .el-tabs__item.is-top:last-child{
+.link-url .el-tabs--top .el-tabs__item.is-top:last-child{
   float: right;
   display: block;
 }

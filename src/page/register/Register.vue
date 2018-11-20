@@ -5,7 +5,7 @@
       <div class="web-w">
         <div class="register-box">
           <el-card class="box-card">
-            <el-tabs v-model="activeName" @tab-click="handleClick">
+            <el-tabs v-model="activeName" @tab-click="handleClick" :stretch="true">
               <el-tab-pane label="手机注册" name="first"><MobileRegister></MobileRegister></el-tab-pane>
               <el-tab-pane label="普通注册" name="second"><AccountsRegister></AccountsRegister></el-tab-pane>
             </el-tabs>
