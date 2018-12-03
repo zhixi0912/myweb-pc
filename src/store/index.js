@@ -15,10 +15,16 @@ const mutations = {
     state.activeIndex = value;
   }
 }
+
+const getters  = {
+
+}
+
 export default new Vuex.Store({
   // 在state中去声明全局变量，可以通过 this.$store.state 访问
   state,
   actions,
-  mutations
+  mutations,
+  getters
 })
 

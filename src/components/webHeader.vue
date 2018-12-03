@@ -5,24 +5,19 @@
         <!--<image class="header-logo" :scr="logo"></image>-->
         <img class="header-logo" :src="logo"/>
       </div>
-      <el-menu :default-active="activeIndex" class="l-nav" mode="horizontal" @select="handleSelect">
+      <el-menu :default-active="this.$store.state.activeIndex" class="l-nav" mode="horizontal" @select="handleSelect">
         <!--<el-menu-item><router-link to="/page/home/Home"><image class="header-logo" :scr="logo"></image></router-link></el-menu-item>-->
-        <el-menu-item index="1"><router-link to="/page/home/Home">首页</router-link></el-menu-item>
-        <el-submenu index="2">
-          <template slot="title">活动</template>
-          <el-menu-item index="2-1"><a :plain="true" @click="open">选项1</a></el-menu-item>
-          <el-menu-item index="2-2"><a :plain="true" @click="open">选项2</a></el-menu-item>
-          <el-menu-item index="2-3"><a :plain="true" @click="open">选项3</a></el-menu-item>
-        </el-submenu>
-        <el-menu-item index="3"><router-link to="/page/h5Web/H5Web">消息</router-link></el-menu-item>
-        <el-menu-item index="4"><router-link to="/page/pcWeb/PcWeb">管理</router-link></el-menu-item>
+        <el-menu-item index="1" @click="onMenuChange('Home')">首页</el-menu-item>
+        <el-menu-item index="2" @click="onMenuChange('Server')">活动</el-menu-item>
+        <el-menu-item index="3" @click="onMenuChange('Web')">消息</el-menu-item>
+        <el-menu-item index="4" @click="onMenuChange('About')">管理</el-menu-item>
       </el-menu>
       <div class="r-nav">
-        <button type="button" class="el-button el-button--text">
-          <span><router-link to="/page/login/Login">登录</router-link></span>
+        <button type="button" class="el-button el-button--text" index="0-0" @click="onMenuChange('Login')">登录
+          <!--<span><router-link to="/page/login/Login">登录</router-link></span>-->
         </button>
-        <button type="button" class="el-button el-button--text">
-          <span><router-link to="/page/register/Register">注册</router-link></span>
+        <button type="button" class="el-button el-button--text" index="0-1" @click="onMenuChange('Register')">注册
+          <!--<span><router-link to="/page/register/Register">注册</router-link></span>-->
         </button>
       </div>
     </div>
@@ -35,31 +30,82 @@
         name: "webHeader",
         data() {
           return {
-            activeIndex: '',
             logo:"../../static/images/index/logo-mj.png",
           };
         },
         methods: {
+          onMenuChange(page, fromHook) {
+            const indexs = [
+              {
+                'index': '0-0',
+                'pages': ['Login',]
+              },
+              {
+                'index': '0-1',
+                'pages': ['Register',]
+              },
+              {
+                'index': '1',
+                'pages': ['Home',]
+              },
+              {
+                'index': '2',
+                'pages': ['Server', ]
+              },
+              {
+                'index': '3',
+                'pages': ['Web']
+              },
+              {
+                'index': '4',
+                'pages': ['About',]
+              }
+            ]
+
+          for (var i = 0; i < indexs.length; i++) {
+            // const dic = indexs[i]
+            // if (common.isInArray(dic['pages'], page)) {
+            //   this.$store.commit('webheadernav', dic['index'])
+            //   break
+            // }
+          }
+          if (!fromHook) {
+            this.$router.push({name: page});
+          }
+          // console.log(page, fromHook);
+          },
           handleSelect(key, keyPath) {
             console.log(key, keyPath);
             let value = key;
-            console.log("value", typeof(value) );
-
             this.$store.commit("webheadernav", value);
-            this.navselected=this.$store.state.webheadernav;
-
           },
           open() {
             this.$message('页面正在建设中');
           },
         },
         computed:{
-          // ...mapGetters([
-          //   'activeIndex'
-          // ])
+          activeIndex(){
+            return this.$store.state.activeIndex
+          }
         },
+      created:function () {
+        // 全局路由钩子，监听浏览器前进后退
+        this.$router.beforeEach((to, from, next) => {
+          next()
+          this.onMenuChange(to.name, true)
+        })
+        this.$router.afterEach((to, from) => {
+          this.onMenuChange(to.name, true)
+        })
+
+      },
+      beforeRouteEnter: (to, from, next) => { // 监听刷新页面
+        next(vm => {
+          vm.onMenuChange(to.name, true)
+        })
+      },
       watch:{
-        '$store.state.webheadernav': 'handleSelect'
+
       }
 
     }

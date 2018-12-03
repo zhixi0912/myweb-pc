@@ -6,13 +6,13 @@
       </el-input>
     </el-form-item>
     <el-form-item label="" prop="pass">
-      <el-input placeholder="请输入短信验证码" v-model="ruleForm2.pass" autocomplete="off">
+      <el-input placeholder="请输入短信验证码" v-model="ruleForm2.pass" auto-complete="off">
         <template slot="prepend"><i class="fa fa-unlock-alt" aria-hidden="true"></i></template>
         <el-button slot="append">获取验证码</el-button>
       </el-input>
     </el-form-item>
     <el-form-item label="" prop="pass" v-if="false">
-      <el-input placeholder="请输入图片验证码" v-model="ruleForm2.pass" autocomplete="off">
+      <el-input placeholder="请输入图片验证码" v-model="ruleForm2.pass" auto-complete="off">
         <template slot="prepend"><i class="fa fa-unlock-alt" aria-hidden="true"></i></template>
         <el-button slot="append">A68G</el-button>
       </el-input>

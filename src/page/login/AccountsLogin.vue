@@ -6,12 +6,12 @@
       </el-input>
     </el-form-item>
     <el-form-item prop="pass">
-      <el-input placeholder="请输入密码" v-model="ruleForm2.pass" autocomplete="off">
+      <el-input placeholder="请输入密码" v-model="ruleForm2.pass" auto-complete="off">
         <template slot="prepend"><i class="fa fa-unlock-alt" aria-hidden="true"></i></template>
       </el-input>
     </el-form-item>
     <el-form-item label="" prop="pass" >
-      <el-input placeholder="请输入图片验证码" v-model="ruleForm2.pass" autocomplete="off">
+      <el-input placeholder="请输入图片验证码" v-model="ruleForm2.pass" auto-complete="off">
         <template slot="prepend"><i class="fa fa-unlock-alt" aria-hidden="true"></i></template>
         <el-button slot="append">A68G</el-button>
       </el-input>

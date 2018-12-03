@@ -12,7 +12,7 @@
 
 <script>
     export default {
-        name: "h5-web"
+        name: "server"
     }
 </script>
 
