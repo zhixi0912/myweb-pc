@@ -8,6 +8,7 @@ import Vue from 'vue'
 import VueFullPage from 'vue-fullpage.js'
 import App from './App'
 import router from './router'
+import store from './store'
 // 引用API文件
 import axios from './api/index.js'
 import utils from './utils/index.js'
@@ -30,6 +31,7 @@ Vue.component('Footer',Footer);
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

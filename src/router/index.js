@@ -4,6 +4,8 @@ import Index from '@/page/Index'
 import Content from '@/page/Content'
 import Home from '@/page/home/Home'
 import HomeNewsList from '@/page/home/HomeNewsList'
+import H5Web from '@/page/h5Web/H5Web'
+import PcWeb from '@/page/pcWeb/PcWeb'
 import Login from '@/page/login/Login'
 import AccountsLogin from '@/page/login/AccountsLogin'
 import MobileLogin from '@/page/login/MobileLogin'
@@ -54,6 +56,16 @@ export default new Router({
           },
         },
       ]
+    },
+    {
+      path:'/page/h5Web/H5Web',
+      name:'H5Web',
+      component:H5Web,
+    },
+    {
+      path:'/page/pcWeb/PcWeb',
+      name:'PcWeb',
+      component:PcWeb,
     },
     {
       path:'/page/login/Login',

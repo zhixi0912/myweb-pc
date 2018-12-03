@@ -31,15 +31,15 @@
   import songSheet from '../../components/public/music/songSheet' //引用歌单组件
     export default {
      name: "home",
-      data() {
+      data: function () {
         return {
           activeIndex: '1',
-          carouselList:[
-            {imgUrl:'./../../static/images/login/login-ban-1.jpg'},
-            {imgUrl:'./../../static/images/login/login-ban-2.jpg'},
-            {imgUrl:'./../../static/images/login/login-ban-3.jpg'},
+          carouselList: [
+            {imgUrl: './../../static/images/login/login-ban-1.jpg'},
+            {imgUrl: './../../static/images/login/login-ban-2.jpg'},
+            {imgUrl: './../../static/images/login/login-ban-3.jpg'},
           ],
-          logo:require("../../../static/images/index/logo-mj.png"),
+          logo: require("../../../static/images/index/logo-mj.png"),
         };
       },
       components:{
