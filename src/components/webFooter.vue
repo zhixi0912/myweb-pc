@@ -4,11 +4,11 @@
       <div class="foot-nav">
         <div class="l-logo"></div>
         <div class="r-nav">
-          <a class="el-button el-button--text" href="">关于我们</a>|
-          <a class="el-button el-button--text" href="">服务协议</a>|
-          <a class="el-button el-button--text" href="">客服中心</a>|
-          <a class="el-button el-button--text" href="">诚聘英才</a>|
-          <a class="el-button el-button--text" href="">版权所有</a>
+          <a class="el-button el-button--text" href="">我是1</a>|
+          <a class="el-button el-button--text" href="">我是2</a>|
+          <a class="el-button el-button--text" href="">我是3</a>|
+          <a class="el-button el-button--text" href="">我是4</a>|
+          <a class="el-button el-button--text" href="">我是5</a>
 
         </div>
       </div>

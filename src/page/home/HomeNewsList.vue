@@ -5,7 +5,7 @@
       <el-tab-pane label="新闻">新闻</el-tab-pane>
       <el-tab-pane label="公告">公告</el-tab-pane>
       <el-tab-pane label="活动">活动</el-tab-pane>
-      <el-tab-pane name="more" class="more-btn"><span slot="label"><router-link to="/page/wholeList/wholeList">更多+</router-link></span></el-tab-pane>
+      <el-tab-pane name="more" class="more-btn"><span slot="label"><router-link to="/page/wholeList/index">更多+</router-link></span></el-tab-pane>
     </el-tabs>
   </el-card>
 </template>

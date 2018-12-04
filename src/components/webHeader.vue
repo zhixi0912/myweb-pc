@@ -2,15 +2,13 @@
   <div class="header">
     <div class="webHeader web-w" id="webHeader">
       <div class="header-logo-box">
-        <!--<image class="header-logo" :scr="logo"></image>-->
-        <img class="header-logo" :src="logo"/>
+        <router-link to="/"><img class="header-logo" :src="logo"/></router-link>
       </div>
-      <el-menu :default-active="this.$store.state.activeIndex" class="l-nav" mode="horizontal" @select="handleSelect">
-        <!--<el-menu-item><router-link to="/page/home/Home"><image class="header-logo" :scr="logo"></image></router-link></el-menu-item>-->
-        <el-menu-item index="1" @click="onMenuChange('Home')">首页</el-menu-item>
-        <el-menu-item index="2" @click="onMenuChange('Server')">活动</el-menu-item>
-        <el-menu-item index="3" @click="onMenuChange('Web')">消息</el-menu-item>
-        <el-menu-item index="4" @click="onMenuChange('About')">管理</el-menu-item>
+      <el-menu :default-active="activeIndex" class="l-nav" mode="horizontal" @select="handleSelect">
+        <el-menu-item v-for="(item, index) in navList" index='item.indexs' @click="onMenuChange(item.path,item.indexs)" :key="index">{{item.title}}</el-menu-item>
+        <!--<el-menu-item index="2" @click="onMenuChange('Server')" data-path="Server">活动</el-menu-item>-->
+        <!--<el-menu-item index="3" @click="onMenuChange('Web')" data-path="Web">消息</el-menu-item>-->
+        <!--<el-menu-item index="4" @click="onMenuChange('About')" data-path="About">管理</el-menu-item>-->
       </el-menu>
       <div class="r-nav">
         <button type="button" class="el-button el-button--text" index="0-0" @click="onMenuChange('Login')">登录
@@ -30,83 +28,81 @@
         name: "webHeader",
         data() {
           return {
+            navList:[
+              {
+                indexs:"1",
+                path:"Home",
+                title:"首页"
+              },
+              {
+                indexs:"2",
+                path:"Server",
+                title:"活动"
+              },
+              {
+                indexs:"3",
+                path:"Web",
+                title:"消息"
+              },
+              {
+                indexs:"4",
+                path:"About",
+                title:"管理"
+              }
+            ],
+            activeIndex:"1",
             logo:"../../static/images/index/logo-mj.png",
+
           };
         },
         methods: {
-          onMenuChange(page, fromHook) {
-            const indexs = [
-              {
-                'index': '0-0',
-                'pages': ['Login',]
-              },
-              {
-                'index': '0-1',
-                'pages': ['Register',]
-              },
-              {
-                'index': '1',
-                'pages': ['Home',]
-              },
-              {
-                'index': '2',
-                'pages': ['Server', ]
-              },
-              {
-                'index': '3',
-                'pages': ['Web']
-              },
-              {
-                'index': '4',
-                'pages': ['About',]
-              }
-            ]
+          onMenuChange(page,index) {
 
-          for (var i = 0; i < indexs.length; i++) {
-            // const dic = indexs[i]
-            // if (common.isInArray(dic['pages'], page)) {
-            //   this.$store.commit('webheadernav', dic['index'])
-            //   break
-            // }
-          }
-          if (!fromHook) {
             this.$router.push({name: page});
-          }
-          // console.log(page, fromHook);
+            this.activeIndex = index;
+            console.log(page,index);
           },
-          handleSelect(key, keyPath) {
-            console.log(key, keyPath);
-            let value = key;
-            this.$store.commit("webheadernav", value);
+          handleSelect(key, keyPath,route) {
+            // console.log(key, keyPath);
+            // // console.log(route);
+            // let value = key;
+            // this.activeIndex = toString(value)
           },
           open() {
             this.$message('页面正在建设中');
           },
-        },
-        computed:{
-          activeIndex(){
-            return this.$store.state.activeIndex
+          getActiveNav(href) {
+            let key = href.split('/root/')[1];
+            return navConfig[key];
           }
         },
-      created:function () {
-        // 全局路由钩子，监听浏览器前进后退
-        this.$router.beforeEach((to, from, next) => {
-          next()
-          this.onMenuChange(to.name, true)
-        })
-        this.$router.afterEach((to, from) => {
-          this.onMenuChange(to.name, true)
-        })
+        mounted(){
 
-      },
-      beforeRouteEnter: (to, from, next) => { // 监听刷新页面
-        next(vm => {
-          vm.onMenuChange(to.name, true)
-        })
-      },
-      watch:{
+        },
+        computed:{
+            // activeIndex(){
+            //   return this.$store.state.activeIndex
+            // }
+        },
+        created:function () {
+          // 全局路由钩子，监听浏览器前进后退
+          this.$router.beforeEach((to, from, next) => {
+            next()
+            this.onMenuChange(to.name, true)
+          })
+          this.$router.afterEach((to, from) => {
+            this.onMenuChange(to.name, true)
+          })
 
-      }
+        },
+        beforeRouteEnter: (to, from, next) => { // 监听刷新页面
+          next(vm => {
+            vm.onMenuChange(to.name, true)
+          })
+        },
+        watch:{
+
+        }
 
     }
 </script>
@@ -118,9 +114,11 @@
   width: 60px;
 }
 .header-logo{
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 40px;
   display: block;
+  vertical-align: middle;
+  margin-top: 5px;
 }
 .header{
   background-color: #ffffff;

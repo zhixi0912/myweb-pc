@@ -1,34 +1,18 @@
 <template>
-  <div class="index-wrap">
-    <el-container>
-      <!--<el-aside><navMenu></navMenu></el-aside>-->
-      <el-container id="el-container">
-        <!--<el-header><myHeader></myHeader></el-header>-->
-        <el-main>
-          <router-view></router-view>
-        </el-main>
-        <!--<el-footer><myFooter></myFooter></el-footer>-->
-      </el-container>
-    </el-container>
-  </div>
+  <el-container>
+    <el-header class="animated faedOutUp"><Header></Header></el-header>
+    <el-main>
+      <router-view></router-view>
+    </el-main>
+    <el-footer><Footer></Footer></el-footer>
+  </el-container>
 </template>
 
 <script>
-  // import myHeader from '../components/webHeader'
-  // import myFooter from '../components/webFooter'
-  // import navMenu from '../components/NavMenu'
   export default {
     name: "Index" ,
-    // components: {
-    //   myHeader,
-    //   myFooter,
-    //   navMenu
-    // }
   }
 </script>
 
 <style scoped>
-  .el-main{
-    padding: 0;
-  }
 </style>

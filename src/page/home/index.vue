@@ -1,28 +1,19 @@
 <template>
-  <el-container>
-    <el-header class="animated faedOutUp"><Header></Header></el-header>
-
-    <el-main>
-      <div class="web-w">
-        <div class="carousel-box">
-          <Carousel :carousel-list="carouselList"></Carousel>
-        </div>
-
-        <div class="list-line-top">
-          <div class="link-url">
-            <HomeNewsList></HomeNewsList>
-            <!--<router-link :to="{name:'Audio'}">这是一首歌</router-link>-->
-          </div>
-
-          <!--<songSheet></songSheet>-->
-        </div>
-        <div class="audio-box">
-          <!--<AudioBox></AudioBox>-->
-        </div>
+  <div class="web-w">
+    <div class="carousel-box">
+      <Carousel :carousel-list="carouselList"></Carousel>
+    </div>
+    <div class="list-line-top">
+      <div class="link-url">
+        <HomeNewsList></HomeNewsList>
+        <!--<router-link :to="{name:'Audio'}">这是一首歌</router-link>-->
       </div>
-    </el-main>
-    <el-footer><Footer></Footer></el-footer>
-    </el-container>
+      <!--<songSheet></songSheet>-->
+    </div>
+    <div class="audio-box">
+      <!--<AudioBox></AudioBox>-->
+    </div>
+  </div>
 </template>
 
 <script>

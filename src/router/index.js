@@ -1,19 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/page/Index'
+import PageHome from '@/page/pageHome'
+import Index from '@/page/index'
 import Content from '@/page/Content'
-import Home from '@/page/home/Home'
+import Home from '@/page/home/index'
 import HomeNewsList from '@/page/home/HomeNewsList'
-import Server from '@/page/server/Server'
-import Web from '@/page/web/Web'
-import About from '@/page/about/About'
-import Login from '@/page/login/Login'
+import Server from '@/page/server/index'
+import Web from '@/page/web/index'
+import About from '@/page/about/index'
+import Login from '@/page/login/index'
 import AccountsLogin from '@/page/login/AccountsLogin'
 import MobileLogin from '@/page/login/MobileLogin'
-import Register from '@/page/register/Register'
+import Register from '@/page/register/index'
 import AccountsRegister from '@/page/register/AccountsRegister'
 import MobileRegister from '@/page/register/MobileRegister'
-import wholeList from '@/page/wholeList/wholeList'
+import wholeList from '@/page/wholeList/index'
 import Audio from '@/components/public/music/audio'
 
 
@@ -27,7 +28,7 @@ export default new Router({
       path: '/',
       title:'首页',
       name: '',
-      component: Index,
+      component: PageHome,
       children:[
         {
           path: '/',
@@ -37,46 +38,48 @@ export default new Router({
       ]
     },
     {
-      path:'/page/home/Home',
-      name:'Home',
-      component:Home,
+      path: '/page/index',
       title:'主页',
-      //   {
-      //   default:Home,
-        // Header: Header,
-      // },
+      name: '',
+      component: Index,
       children:[
-        // {
-        //   path: '/',
-        //   name: 'HomeCarousel',
-        //   component: HomeCarousel,
-        // },
         {
-          path: '/HomeNewsList/',
-          name: 'HomeNewsList',
-          component: {
-            HomeNewsList:HomeNewsList
-          },
+          path:'/',
+          name:'Home',
+          component:Home,
+          title:'',
+          children:[
+            {
+              path: '/HomeNewsList/',
+              name: 'HomeNewsList',
+              component: {
+                HomeNewsList:HomeNewsList
+              },
+            },
+          ]
+        },
+        {
+          path:'/page/about/index',
+          name:'About',
+          component:About,
+        },
+        {
+          path:'/page/server/index',
+          name:'Server',
+          component:Server,
+        },
+        {
+          path:'/page/web/index',
+          name:'Web',
+          component:Web,
         },
       ]
     },
+
+
+
     {
-      path:'/page/server/Server',
-      name:'Server',
-      component:Server,
-    },
-    {
-      path:'/page/web/Web',
-      name:'Web',
-      component:Web,
-    },
-    {
-      path:'/page/about/About',
-      name:'About',
-      component:About,
-    },
-    {
-      path:'/page/login/Login',
+      path:'/page/login/index',
       name:'Login',
       component:Login,
       children:[
@@ -93,7 +96,7 @@ export default new Router({
       ]
     },
     {
-      path:'/page/register/Register',
+      path:'/page/register/index',
       name:'Register',
       component:Register,
       children:[
@@ -110,7 +113,7 @@ export default new Router({
       ]
     },
     {
-      path:'/page/wholeList/wholeList',
+      path:'/page/wholeList/index',
       name:'wholeList',
       component:wholeList,
     },

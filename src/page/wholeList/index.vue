@@ -1,9 +1,10 @@
 <template>
   <el-container>
     <el-header class="animated faedOutUp"><Header></Header></el-header>
+
     <el-main>
       <div class="web-w">
-        11111
+5555
       </div>
     </el-main>
     <el-footer><Footer></Footer></el-footer>
@@ -12,7 +13,7 @@
 
 <script>
     export default {
-        name: "server"
+        name: "wholeList"
     }
 </script>
 
