@@ -59,8 +59,8 @@
           onMenuChange(page,index) {
 
             this.$router.push({name: page});
-            this.activeIndex = index;
-            console.log(page,index);
+            // this.activeIndex = index;
+            // console.log(page,index);
           },
           handleSelect(key, keyPath,route) {
             // console.log(key, keyPath);

@@ -2,7 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import 'vue2-animate/dist/vue2-animate.min.css'
+// import 'vue2-animate/dist/vue2-animate.min.css'
+import 'animate.css'
 import 'font-awesome/css/font-awesome.css'
 import Vue from 'vue'
 import VueFullPage from 'vue-fullpage.js'
