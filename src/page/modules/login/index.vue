@@ -1,48 +1,42 @@
 <template>
-  <el-container>
-    <el-header class="animated faedOutUp"><Header></Header></el-header>
-    <el-main>
-      <div class="web-w">
-        <div class="img-box">
-          <Carousel :carousel-list="carouselList"></Carousel>
-        </div>
-        <div class="login-box-bg"></div>
-        <div class="login-box">
-          <el-card class="box-card" >
-            <template>
-              <el-tabs v-model="activeName" @tab-click="handleClick" :stretch="true">
-                <el-tab-pane label="普通登录" name="first"><AccountsLogin></AccountsLogin></el-tab-pane>
-                <el-tab-pane label="手机登录" name="second"><MobileLogin></MobileLogin></el-tab-pane>
-              </el-tabs>
-            </template>
-            <el-row>
-              <el-col :span="12">
-                <div class="grid-content">
-                  <el-tooltip class="item" effect="dark" content="QQ登录" placement="top">
-                    <el-button icon="fa fa-qq" circle></el-button>
-                  </el-tooltip>
-                  <el-tooltip class="item" effect="dark" content="微信登录" placement="top">
-                    <el-button icon="fa fa-weixin" circle></el-button>
-                  </el-tooltip>
-                </div>
-              </el-col>
-              <el-col :span="12">
-                <div class="grid-content">
-                  <el-button type="text">忘记密码</el-button>
-                  <el-button type="text">立即注册</el-button>
-                </div>
-              </el-col>
-            </el-row>
-          </el-card>
-        </div>
-      </div>
-    </el-main>
-    <el-footer><Footer></Footer></el-footer>
-  </el-container>
+  <div class="web-w">
+    <div class="img-box">
+      <Carousel :carousel-list="carouselList"></Carousel>
+    </div>
+    <div class="login-box-bg"></div>
+    <div class="login-box">
+      <el-card class="box-card" >
+        <template>
+          <el-tabs v-model="activeName" @tab-click="handleClick" :stretch="true">
+            <el-tab-pane label="普通登录" name="first"><AccountsLogin></AccountsLogin></el-tab-pane>
+            <el-tab-pane label="手机登录" name="second"><MobileLogin></MobileLogin></el-tab-pane>
+          </el-tabs>
+        </template>
+        <el-row>
+          <el-col :span="12">
+            <div class="grid-content">
+              <el-tooltip class="item" effect="dark" content="QQ登录" placement="top">
+                <el-button icon="fa fa-qq" circle></el-button>
+              </el-tooltip>
+              <el-tooltip class="item" effect="dark" content="微信登录" placement="top">
+                <el-button icon="fa fa-weixin" circle></el-button>
+              </el-tooltip>
+            </div>
+          </el-col>
+          <el-col :span="12">
+            <div class="grid-content">
+              <el-button type="text">忘记密码</el-button>
+              <el-button type="text">立即注册</el-button>
+            </div>
+          </el-col>
+        </el-row>
+      </el-card>
+    </div>
+  </div>
 </template>
 
 <script>
-  import Carousel from './../home/HomeCarousel'  //引用幻灯片组件
+  import Carousel from '../../../components/public/HomeCarousel'  //引用幻灯片组件
   import AccountsLogin from './AccountsLogin'  //引用帐号登录组件
   import MobileLogin from './MobileLogin'  //引用手机登录组件
   export default {
@@ -112,7 +106,7 @@
         top: 0;
         right: 0;
         z-index: 998;
-        background: url("./../../../static/images/login/login-box-bg-2.png") no-repeat center center;
+        background: url("../../../../static/images/login/login-box-bg-2.png") no-repeat center center;
       }
     }
   }

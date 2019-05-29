@@ -5,18 +5,14 @@
         <router-link to="/"><img class="header-logo" :src="logo"/></router-link>
       </div>
       <el-menu :default-active="activeIndex" class="l-nav" mode="horizontal" @select="handleSelect">
-        <el-menu-item v-for="(item, index) in navList" index='item.indexs' @click="onMenuChange(item.path,item.indexs)" :key="index">{{item.title}}</el-menu-item>
+        <el-menu-item v-for="(item, index) in navList" index='item.indexs' @click="onMenuChange(item.name,item.indexs)" :key="index">{{item.title}}</el-menu-item>
         <!--<el-menu-item index="2" @click="onMenuChange('Server')" data-path="Server">活动</el-menu-item>-->
         <!--<el-menu-item index="3" @click="onMenuChange('Web')" data-path="Web">消息</el-menu-item>-->
         <!--<el-menu-item index="4" @click="onMenuChange('About')" data-path="About">管理</el-menu-item>-->
       </el-menu>
       <div class="r-nav">
-        <button type="button" class="el-button el-button--text" index="0-0" @click="onMenuChange('Login')">登录
-          <!--<span><router-link to="/page/login/Login">登录</router-link></span>-->
-        </button>
-        <button type="button" class="el-button el-button--text" index="0-1" @click="onMenuChange('Register')">注册
-          <!--<span><router-link to="/page/register/Register">注册</router-link></span>-->
-        </button>
+        <button type="button" class="el-button el-button--text"><router-link to="/login">登录</router-link></button>
+        <button type="button" class="el-button el-button--text"><router-link to="/register">注册</router-link></button>
       </div>
     </div>
   </div>
@@ -31,22 +27,22 @@
             navList:[
               {
                 indexs:"1",
-                path:"Home",
+                name:"modulesIndex",
                 title:"首页"
               },
               {
                 indexs:"2",
-                path:"Server",
+                name:"server",
                 title:"活动"
               },
               {
                 indexs:"3",
-                path:"Web",
+                name:"web",
                 title:"消息"
               },
               {
                 indexs:"4",
-                path:"About",
+                name:"about",
                 title:"管理"
               }
             ],
@@ -57,7 +53,6 @@
         },
         methods: {
           onMenuChange(page,index) {
-
             this.$router.push({name: page});
             // this.activeIndex = index;
             // console.log(page,index);

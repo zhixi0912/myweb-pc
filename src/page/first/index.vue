@@ -1,9 +1,10 @@
 <template>
   <div class="fullpage-main">
-    <ul id="menu" class="menu" style="display: none">
+    <ul id="menu" class="menu">
       <li data-anchor="page1" class="active"><a href="#page1">Section 1</a></li>
       <li data-anchor="page2"><a href="#page2">Section 2</a></li>
       <li data-anchor="page3"><a href="#page3">Section 3</a></li>
+      <li data-anchor="page3"><a href="/home">进入官网</a></li>
     </ul>
 
     <full-page ref="fullpage" :options="options"  id="fullpage">
@@ -40,18 +41,18 @@
           <el-row :gutter="20">
             <el-col :span="8" class=" ">
               <transition name="" mode="" enter-active-class="animated fadeInUp" leave-active-class="animated zoomOutRight">
-                <div class="pen-box" v-show="page1pen1"><img src="../../static/images/index/pen.png" /></div>
+                <div class="pen-box" v-show="page1pen1"><img src="../../../static/images/index/pen.png" /></div>
               </transition>
 
             </el-col>
             <el-col :span="8" class="">
               <transition name="" mode="" enter-active-class="animated fadeInUp" leave-active-class="animated zoomOutRight">
-                <div class="pen-box" v-show="page1pen2"><img src="../../static/images/index/pen.png" /></div>
+                <div class="pen-box" v-show="page1pen2"><img src="../../../static/images/index/pen.png" /></div>
               </transition>
             </el-col>
             <el-col :span="8" class="">
               <transition name="" mode="" enter-active-class="animated fadeInUp" leave-active-class="animated zoomOutRight">
-                <div class="pen-box" v-show="page1pen3"><img src="../../static/images/index/pen.png" /></div>
+                <div class="pen-box" v-show="page1pen3"><img src="../../../static/images/index/pen.png" /></div>
               </transition>
             </el-col>
           </el-row>
@@ -81,8 +82,8 @@
             </el-col>
           </el-row>
             <div class="anim-1">
-              <div><img class="anim-img" src="../../static/images/index/anim-1.png" /></div>
-              <div class="anim-img-box-2"><img class="anim-img-2" src="../../static/images/index/anim-1.png" /></div>
+              <div><img class="anim-img" src="../../../static/images/index/anim-1.png" /></div>
+              <div class="anim-img-box-2"><img class="anim-img-2" src="../../../static/images/index/anim-1.png" /></div>
 
 
             </div>
@@ -113,7 +114,7 @@
               <button class="button big blue" @click="toHome">进入首页</button>
             </el-col>
             <el-col :span="8" class="text-right web-title-3">
-              <a href="" class="button big blue">返回顶部</a>
+              <a href="/home" class="button big blue">返回顶部</a>
             </el-col>
           </el-row>
         </div>
@@ -172,6 +173,21 @@
               },600)
             },600)
             this.page2Title2 = false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -244,7 +260,7 @@
       },
       toHome(){
         console.log("11")
-        this.$router.push({name: 'Home'});
+        // this.$router.push({name: 'Home'});
       },
 
     },
@@ -371,15 +387,15 @@
   color: #345903 !important;
   border: 1px solid #96a37b !important;
   background-color: #79be1e;
-  background-image: url(../../static/images/index/button_bg.png), url(../../static/images/index/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(162,211,30,1) 0,rgba(162,211,30,0) 100px),-moz-linear-gradient(#82cc27, #74b317);
-  background-image: url(../../static/images/index/button_bg.png), url(../../static/images/index/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(162,211,30,1)), to(rgba(162,211,30,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#82cc27), to(#74b317));
+  background-image: url(../../../static/images/index/button_bg.png), url(../../../static/images/index/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(162,211,30,1) 0,rgba(162,211,30,0) 100px),-moz-linear-gradient(#82cc27, #74b317);
+  background-image: url(../../../static/images/index/button_bg.png), url(../../../static/images/index/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(162,211,30,1)), to(rgba(162,211,30,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#82cc27), to(#74b317));
 }
 .blue.button {
   color: #0f4b6d !important;
   border: 1px solid #84acc3 !important;
   background-color: #48b5f2;
-  background-image: url(../../static/images/index/button_bg.png), url(../../static/images/index/button_bg.png), -moz-radial-gradient(	center bottom, circle, rgba(89,208,244,1) 0,rgba(89,208,244,0) 100px), -moz-linear-gradient(#4fbbf7, #3faeeb);
-  background-image: url(../../static/images/index/button_bg.png), url(../../static/images/index/button_bg.png), -webkit-gradient(	radial, 50% 100%, 0, 50% 100%, 100, from(rgba(89,208,244,1)), to(rgba(89,208,244,0))), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4fbbf7), to(#3faeeb));
+  background-image: url(../../../static/images/index/button_bg.png), url(../../../static/images/index/button_bg.png), -moz-radial-gradient(	center bottom, circle, rgba(89,208,244,1) 0,rgba(89,208,244,0) 100px), -moz-linear-gradient(#4fbbf7, #3faeeb);
+  background-image: url(../../../static/images/index/button_bg.png), url(../../../static/images/index/button_bg.png), -webkit-gradient(	radial, 50% 100%, 0, 50% 100%, 100, from(rgba(89,208,244,1)), to(rgba(89,208,244,0))), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4fbbf7), to(#3faeeb));
 }
 .button {
   font:15px Calibri, Arial, sans-serif;
@@ -403,7 +419,7 @@
        the browser does not support multiple backgrounds. */
 
   background-position:bottom left;
-  background-image:url('../../static/images/index/button_bg.png');
+  background-image:url('../../../static/images/index/button_bg.png');
 
   /* Multiple backgrounds version. The background images
        are defined individually in color classes */
@@ -432,8 +448,8 @@
 }
 .green.button:hover {
   background-color: #89d228;
-  background-image: url(../../static/images/index/button_bg.png), url(../../static/images/index/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(183,229,45,1) 0,rgba(183,229,45,0) 100px),-moz-linear-gradient(#90de31, #7fc01e);
-  background-image: url(../../static/images/index/button_bg.png), url(../../static/images/index/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(183,229,45,1)), to(rgba(183,229,45,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#90de31), to(#7fc01e));
+  background-image: url(../../../static/images/index/button_bg.png), url(../../../static/images/index/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(183,229,45,1) 0,rgba(183,229,45,0) 100px),-moz-linear-gradient(#90de31, #7fc01e);
+  background-image: url(../../../static/images/index/button_bg.png), url(../../../static/images/index/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(183,229,45,1)), to(rgba(183,229,45,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#90de31), to(#7fc01e));
 }
 
 
@@ -474,7 +490,7 @@
 }
 
 .section-1{
-  background-image: url("../../static/images/index/page-1.jpg");
+  background-image: url("../../../static/images/index/page-1.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -491,14 +507,14 @@
   /*background-repeat: no-repeat;*/
   /*background-size: cover;*/
 }
-/*.menu{*/
-  /*position: absolute;*/
-  /*right: 60px;*/
-  /*top: 30%;*/
-  /*background-color: #ffffff;*/
-  /*width: 100px;*/
-  /*min-height: 200px;*/
-  /*z-index: 9999;*/
-/*}*/
+.menu{
+  position: absolute;
+  right: 60px;
+  top: 30%;
+  background-color: #ffffff;
+  width: 100px;
+  min-height: 200px;
+  z-index: 9999;
+}
 
 </style>
