@@ -26,9 +26,9 @@
         return {
           activeIndex: '1',
           carouselList: [
-            {imgUrl: '../../../../../static/images/login/login-ban-1.jpg'},
-            {imgUrl: '../../../../../static/images/login/login-ban-2.jpg'},
-            {imgUrl: '../../../../../static/images/login/login-ban-3.jpg'},
+            {imgUrl:'./../../static/images/login/login-ban-01.jpg'},
+            {imgUrl:'./../../static/images/login/login-ban-02.jpg'},
+            {imgUrl:'./../../static/images/login/login-ban-03.jpg'},
           ],
           // logo: require("../../../../../static/images/index/logo-mj.png"),
         };

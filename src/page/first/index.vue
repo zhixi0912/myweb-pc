@@ -1,10 +1,11 @@
 <template>
   <div class="fullpage-main">
     <ul id="menu" class="menu">
-      <li data-anchor="page1" class="active"><a href="#page1">Section 1</a></li>
-      <li data-anchor="page2"><a href="#page2">Section 2</a></li>
-      <li data-anchor="page3"><a href="#page3">Section 3</a></li>
-      <li data-anchor="page3"><a href="/home">进入官网</a></li>
+      <li data-menuanchor="page1" class="active"><a href="#page1" class="page-btn"> 1</a></li>
+      <li data-menuanchor="page2"><a href="#page2" class="page-btn">2</a></li>
+      <li data-menuanchor="page3"><a href="#page3" class="page-btn">3</a></li>
+      <li data-menuanchor="page4"><a href="#page3" class="page-btn">4</a></li>
+      <li data-menuanchor=""><a href="/home" class="home-btn el-button el-button--text">进入官网</a></li>
     </ul>
 
     <full-page ref="fullpage" :options="options"  id="fullpage">
@@ -97,11 +98,7 @@
             <p class="h1-t1">轻盈上线</p>
             <p class="h1-t2">清新、极简，呈现全新体验方式</p>
           </div>
-          <el-carousel height="350px">
-            <el-carousel-item v-for="item in 4" :key="item">
-              <h3 class="small">{{ item }}</h3>
-            </el-carousel-item>
-          </el-carousel>
+          <Carousel :carousel-list="carouselList"></Carousel>
         </div>
       </div>
       <div class="section section-4">
@@ -111,10 +108,11 @@
         <div class="index-main  clearfix">
           <el-row :gutter="20">
             <el-col :span="8" class="text-right web-title-3">
-              <button class="button big blue" @click="toHome">进入首页</button>
+              <a href="/home" class="button big blue">进入首页</a>
+              <!--<button class="button big blue" @click="toHome">进入首页</button>-->
             </el-col>
             <el-col :span="8" class="text-right web-title-3">
-              <a href="/home" class="button big blue">返回顶部</a>
+              <a href="#page1" class="button big blue">返回顶部</a>
             </el-col>
           </el-row>
         </div>
@@ -124,7 +122,7 @@
 </template>
 
 <script>
-  // import 'swiper/dist/css/swiper.css'
+  import Carousel from '../../components/public/HomeCarousel'  //引用幻灯片组件
   export default {
     data() {
       return {
@@ -137,11 +135,11 @@
           sectionsColor: ['#ffffff', '#add5a2', '#ffffff', '#d8f2fc'],
 
         },
-
-
-
-
-
+        carouselList:[
+          {imgUrl:'./../../static/images/login/login-ban-01.jpg'},
+          {imgUrl:'./../../static/images/login/login-ban-02.jpg'},
+          {imgUrl:'./../../static/images/login/login-ban-03.jpg'},
+        ],
         page1Title1:false,
         page1Title2:false,
         page2Title2:false,
@@ -151,7 +149,7 @@
         boHeight:300/10,
         posHeight:300/1.1,
         step:0,
-        colors:['rgba(216, 242, 252, 0.9)', 'rgba(216, 242, 252,  0.6)', 'rgba(216, 242, 252,  0.3)']
+        colors:['rgba(216, 242, 252, 0.9)', 'rgba(216, 242, 252,  0.7)', 'rgba(216, 242, 252,  0.5)']
       }
     },
     methods: {
@@ -175,37 +173,14 @@
             this.page2Title2 = false
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           }else if(pageA==2){
-
-
 
             this.page1Title1 = false;
             this.page1Title2 = false;
-
             this.page2Title2 = true
-
             this.page1pen1 = false;
             this.page1pen2 = false;
             this.page1pen3 = false;
-
-
-
 
 
         }else if(pageA==3){
@@ -266,6 +241,7 @@
     },
     components:{
       // moveTo(section, slide)	//滚动到
+      Carousel,
     },
     computed:{
 
@@ -502,19 +478,37 @@
   /*background-size: cover;*/
 }
 .section-3{
-  /*background-image: url("../../static/images/index/D8F807DF.jpg");*/
-  /*background-position: center center;*/
-  /*background-repeat: no-repeat;*/
-  /*background-size: cover;*/
+  background-image: url("../../../static/images/index/xfe-layer-bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .menu{
   position: absolute;
   right: 60px;
   top: 30%;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
   width: 100px;
   min-height: 200px;
   z-index: 9999;
 }
-
+.menu li{
+  list-style-type:none;
+  text-align: center;
+}
+.menu li a.page-btn{
+  text-indent: 200px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 20px auto;
+  background-color: #000;
+  cursor: pointer;
+  transform:rotate(45deg);
+  opacity: 0.6;
+}
+.menu li.active a.page-btn{
+  width: 16px;
+  height: 16px;
+}
 </style>

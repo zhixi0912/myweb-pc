@@ -3,7 +3,8 @@
     <div class="img-box">
       <Carousel :carousel-list="carouselList"></Carousel>
     </div>
-    <div class="login-box-bg"></div>
+    <div class="login-box-bg" :class="loginBg ? 'active':''" ></div>
+
     <div class="login-box">
       <el-card class="box-card" >
         <template>
@@ -58,7 +59,8 @@
           type: [],
           resource: '',
           desc: ''
-        }
+        },
+        loginBg:false,
       };
     },
     methods: {
@@ -108,9 +110,26 @@
         z-index: 998;
         background: url("../../../../static/images/login/login-box-bg-2.png") no-repeat center center;
       }
+      .login-box-bg.active{
+        animation:lds-hourglass 2s infinite
+      }
     }
   }
 
+
+  @keyframes lds-hourglass {
+    0% {
+      transform:rotate(0);
+      animation-timing-function:cubic-bezier(.55,.055,.675,.19)
+    }
+    50% {
+      transform:rotate(180deg);
+      animation-timing-function:cubic-bezier(.215,.61,.355,1)
+    }
+    100% {
+      transform:rotate(360deg)
+    }
+  }
 
   .el-carousel__item h3 {
     color: #475669;
