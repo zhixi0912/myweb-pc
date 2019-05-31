@@ -1,8 +1,8 @@
 // 配置API接口地址
 // var root = 'https://cnodejs.org/api/v1'
 // var root = '/api/v1'
-var root = '/prefix'
 // var root = '/mock'
+var root = 'https://easy-mock.com/mock'
 // console.log(root);
 // 引用axios
 var axios = require('axios')

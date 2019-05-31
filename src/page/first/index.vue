@@ -4,8 +4,8 @@
       <li data-menuanchor="page1" class="active"><a href="#page1" class="page-btn"> 1</a></li>
       <li data-menuanchor="page2"><a href="#page2" class="page-btn">2</a></li>
       <li data-menuanchor="page3"><a href="#page3" class="page-btn">3</a></li>
-      <li data-menuanchor="page4"><a href="#page3" class="page-btn">4</a></li>
-      <li data-menuanchor=""><a href="/home" class="home-btn el-button el-button--text">进入官网</a></li>
+      <li data-menuanchor="page4"><a href="#page4" class="page-btn">4</a></li>
+      <li data-menuanchor="" class="home-box"><a href="/home" class="home-btn el-button el-button--text"><i class="fa fa-home" aria-hidden="true"></i></a></li>
     </ul>
 
     <full-page ref="fullpage" :options="options"  id="fullpage">
@@ -27,7 +27,7 @@
           <el-row :gutter="20">
             <el-col :span="12" class="text-right web-title-2">
               <transition name="" mode="" enter-active-class="animated fadeInUp" leave-active-class="animated zoomOutRight">
-                <div v-show="page1Title2">Subscribe to our newsletter</div>
+                <div v-show="page1Title2">Get product updates, company news, and more.</div>
               </transition>
 
             </el-col>
@@ -68,8 +68,8 @@
             <el-col :span="8" class="text-right web-title-3">
               <transition name="" mode="" enter-active-class="animated fadeInRight" leave-active-class="animated zoomOutRight">
                 <div class="page2-h1" v-show="page2Title2">
-                    <div class="page2-t1">WELCOME</div>
                     <div class="page2-t2">Subscribe to our newsletter</div>
+                  <div class="page2-t1">WELCOME</div>
                 </div>
               </transition>
             </el-col>
@@ -93,10 +93,20 @@
       </div>
       <div class="section section-3">
 
-        <div class="index-main  clearfix" style="top:40%;">
+        <div class="index-main  clearfix" >
           <div class="page3-h1">
-            <p class="h1-t1">轻盈上线</p>
-            <p class="h1-t2">清新、极简，呈现全新体验方式</p>
+              <div class="h1-t1">
+              <transition name="" mode="" enter-active-class="animated fadeInUp" leave-active-class="animated zoomOutRight">
+                <div v-show="page3Title1">轻盈上线</div>
+              </transition>
+              </div>
+            <div class="h1-t2">
+              <transition name="" mode="" enter-active-class="animated fadeInUp" leave-active-class="animated zoomOutRight">
+                <div v-show="page3Title2">
+                 清新、极简，呈现全新体验方式
+                </div>
+              </transition>
+            </div>
           </div>
           <Carousel :carousel-list="carouselList"></Carousel>
         </div>
@@ -105,14 +115,23 @@
         <div class="wave-box">
           <canvas id="canvas" ref="canvas"></canvas>
         </div>
-        <div class="index-main  clearfix">
+        <div class="index-main  clearfix" style="top:40%;">
           <el-row :gutter="20">
-            <el-col :span="8" class="text-right web-title-3">
-              <a href="/home" class="button big blue">进入首页</a>
-              <!--<button class="button big blue" @click="toHome">进入首页</button>-->
+            <el-col :span="24" class="text-right web-title-4">
+              <transition name="" mode="" enter-active-class="animated fadeInUp" leave-active-class="animated zoomOutRight">
+                <div v-show="page4Title1" class="web-title-4-h1">更多惊喜等你体验</div>
+              </transition>
             </el-col>
-            <el-col :span="8" class="text-right web-title-3">
-              <a href="#page1" class="button big blue">返回顶部</a>
+            <el-col :span="10" class="text-right web-title-5">
+              <transition name="" mode="" enter-active-class="animated fadeInUp" leave-active-class="animated zoomOutRight">
+                <a  v-show="page4Title2" href="/home" class="button big blue">进入首页</a>
+              </transition>
+            </el-col>
+            <el-col :span="10" :offset="4" class="web-title-5">
+              <transition name="" mode="" enter-active-class="animated fadeInUp" leave-active-class="animated zoomOutRight">
+                <a v-show="page4Title2" href="/home" class="button big blue">进入首页</a>
+              </transition>
+
             </el-col>
           </el-row>
         </div>
@@ -146,6 +165,10 @@
         page1pen1:false,
         page1pen2:false,
         page1pen3:false,
+        page3Title1:false,
+        page3Title2:false,
+        page4Title1:false,
+        page4Title2:false,
         boHeight:300/10,
         posHeight:300/1.1,
         step:0,
@@ -171,8 +194,10 @@
               },600)
             },600)
             this.page2Title2 = false
-
-
+            this.page3Title1 = false
+            this.page3Title2 = false
+            this.page4Title1 = false
+            this.page4Title2 = false
           }else if(pageA==2){
 
             this.page1Title1 = false;
@@ -181,19 +206,30 @@
             this.page1pen1 = false;
             this.page1pen2 = false;
             this.page1pen3 = false;
-
+            this.page3Title1 = false
+            this.page3Title2 = false
+            this.page4Title1 = false
+            this.page4Title2 = false
 
         }else if(pageA==3){
-
+            this.page3Title1 = true
+            setTimeout(()=>{
+              this.page3Title2 = true;
+            },600)
             this.page1Title1 = false;
             this.page1Title2 = false;
             this.page2Title2 = false
             this.page1pen1 = false;
             this.page1pen2 = false;
             this.page1pen3 = false;
-
+            this.page4Title1 = false
+            this.page4Title2 = false
 
           }else if(pageA==4){
+            this.page4Title1 = true
+            setTimeout(()=>{
+              this.page4Title2 = true;
+            },600)
 
             this.page1Title1 = false;
             this.page1Title2 = false;
@@ -201,6 +237,8 @@
             this.page1pen1 = false;
             this.page1pen2 = false;
             this.page1pen3 = false;
+            this.page3Title1 = false
+            this.page3Title2 = false
 
 
           }
@@ -263,7 +301,9 @@
 </script>
 
 <style scoped>
-
+  .carousel-box .el-carousel__container{
+    height: 500px;
+  }
 .web-title{
   height: 80px;
   line-height: 80px;
@@ -341,13 +381,16 @@
 
 .page3-h1{
   text-align: center;
+  margin-bottom: 50px;
 }
 .page3-h1 .h1-t1{
+  height: 60px;
   line-height: 60px;
   font-size: 36px;
 }
 .page3-h1 .h1-t2{
   color: #999999;
+  height: 60px;
   line-height: 60px;
 }
 .wave-box{
@@ -444,8 +487,18 @@
   bottom:-1px;
 }
 
-
-
+.web-title-4{
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  margin-bottom: 150px;
+}
+.web-title-4 .web-title-4-h1{
+  font-size: 30px;
+}
+.web-title-5{
+  height: 60px;
+}
 
 
 
@@ -499,16 +552,53 @@
 .menu li a.page-btn{
   text-indent: 200px;
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   margin: 20px auto;
   background-color: #000;
   cursor: pointer;
   transform:rotate(45deg);
   opacity: 0.6;
+  position: relative;
+}
+.menu li a.page-btn:after{
+  content: " ";
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-width: 1px;
+  border-color: #000;
+  border-style: solid;
+  /*-webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);*/
+  /*transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);*/
+  position: relative;
+  top: -2px;
+  position: absolute;
+  left: -2px;
 }
 .menu li.active a.page-btn{
-  width: 16px;
-  height: 16px;
+  width: 10px;
+  height: 10px;
+}
+.menu li.active a.page-btn:after{
+  content: " ";
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-width: 1px;
+  border-color: #000;
+  border-style: solid;
+  /*-webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);*/
+  /*transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);*/
+  position: relative;
+  top: -2px;
+  position: absolute;
+  left: -2px;
+}
+.menu li.home-box a{
+  font-size: 20px;
+  color: #000;
+  opacity: 0.6;
+  padding: 0;
 }
 </style>

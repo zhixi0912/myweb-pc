@@ -11,16 +11,17 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/prefix': {
-      // '/api/v1/**': {
+      // '/prefix': {
+      '/mock/**': {
       //   target: 'https://cnodejs.org', // 你接口的域名
-        target: 'http://music.163.com', // 你接口的域名
-        // target: 'https://www.easy-mock.com', // 你接口的域名
+      //   target: 'http://music.163.com', // 你接口的域名
+        target: 'https://easy-mock.com/', // 你接口的域名
         // secure: false,
         changeOrigin:true,
-        pathRewrite: {
-          '^/prefix':''
-        }
+        // pathRewrite: {
+        //   // '^/prefix':''
+        //   '^/mock':''
+        // }
         // changeOrigin: false,
       }
     },

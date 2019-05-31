@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import Carousel from './HomeCarousel'  //引用幻灯片组件
+  import Carousel from '../../../components/public/HomeCarousel'  //引用幻灯片组件
   import HomeNewsList from './HomeNewsList'  //引用新闻组件
   // import songSheet from '../../components/public/music/songSheet' //引用歌单组件
     export default {
@@ -41,7 +41,9 @@
 </script>
 
 <style>
-
+  .carousel-box .el-carousel__container{
+    height: 300px;
+  }
 .list-line-top{
   margin: 20px 0;
 }

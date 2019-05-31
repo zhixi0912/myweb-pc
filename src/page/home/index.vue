@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-header class="animated faedOutUp"><Header></Header></el-header>
-    <el-main>
+    <el-main class="main-box web-w">
       <router-view></router-view>
     </el-main>
     <el-footer><Footer></Footer></el-footer>

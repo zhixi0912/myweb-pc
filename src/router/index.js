@@ -9,7 +9,7 @@ import Register from '@/page/modules/register'
 import Server from '@/page/modules/server'
 import Web from '@/page/modules/web'
 import About from '@/page/modules/about'
-
+import Details from '@/page/modules/details'
 
 
 Vue.use(Router)
@@ -64,6 +64,12 @@ export default new Router({
             name:'web',
             component:Web,
             title:'网站',
+          },
+          {
+            path:'/details/:key',
+            name:'details',
+            component:Details,
+            title:'详情',
           },
         ]
     }
