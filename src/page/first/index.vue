@@ -301,9 +301,9 @@
 </script>
 
 <style scoped>
-  .carousel-box .el-carousel__container{
-    height: 500px;
-  }
+.carousel-box .el-carousel__container{
+  height: 500px;
+}
 .web-title{
   height: 80px;
   line-height: 80px;

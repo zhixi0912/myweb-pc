@@ -1,7 +1,7 @@
 <template>
   <div class="web-w">
     <div class="img-box">
-      <Carousel :carousel-list="carouselList"></Carousel>
+      <Carousel :carousel-list="carouselList" :box-height="boxHeight"></Carousel>
     </div>
     <div class="login-box-bg" :class="loginBg ? 'active':''" ></div>
 
@@ -45,6 +45,7 @@
     data() {
       return {
         activeName: 'first',
+        boxHeight:'500',
         carouselList:[
           {imgUrl:'./../../static/images/login/login-ban-01.jpg'},
           {imgUrl:'./../../static/images/login/login-ban-02.jpg'},
@@ -86,6 +87,7 @@
 </script>
 
 <style lang="scss" scoped>
+
   .el-main{
     background:#e8e8e8;
     .web-w{
@@ -113,9 +115,12 @@
       .login-box-bg.active{
         animation:lds-hourglass 2s infinite
       }
+
     }
   }
-
+  .carousel-box .el-carousel__container {
+    height: 500px;
+  }
 
   @keyframes lds-hourglass {
     0% {
