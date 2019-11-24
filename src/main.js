@@ -7,6 +7,7 @@ import 'animate.css'
 import 'font-awesome/css/font-awesome.css'
 import Vue from 'vue'
 import VueFullPage from 'vue-fullpage.js'
+import ECharts from 'vue-echarts'
 import App from './App'
 import router from './router'
 import store from './store'
@@ -26,6 +27,7 @@ Vue.prototype.$axios = axios
 Vue.prototype.$utils = utils
 Vue.component('Header',Header);
 Vue.component('Footer',Footer);
+Vue.component('v-chart',ECharts);
 // Vue.component('AudioBox',AudioBox);
 
 /* eslint-disable no-new */
