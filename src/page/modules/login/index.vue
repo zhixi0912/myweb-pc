@@ -39,7 +39,7 @@
 <script>
   import Carousel from '../../../components/public/HomeCarousel'  //引用幻灯片组件
   import AccountsLogin from './AccountsLogin'  //引用帐号登录组件
-  import MobileLogin from './MobileLogin'  //引用手机登录组件
+  import MobileLogin from './MobileLogin'  //引用手机登录组件 测试
   export default {
     name: "login",
     data() {
